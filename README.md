@@ -1,24 +1,24 @@
-# README
+List Of Users:
+curl -X GET http://localhost:3000/api/users 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Filter Request:
 
-Things you may want to cover:
+curl -X GET "http://localhost:3000/api/users/filter?campaign_names=cam1,cam2"
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+Create Request:
 
-* Database creation
+curl -X POST http://localhost:3000/api/users \
+-H "Content-Type: application/json" \
+-d '{
+  "user": {
+    "name": "User20",
+    "email": "user20@example.com",
+    "campaigns_list": [
+      {"campaign_name": "campaignB", "campaign_id": "idB5"},
+      {"campaign_name": "campaignX", "campaign_id": "idX9"}
+    ]
+  }
+}'
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
